@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Dental Clinic</title>
+    
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Contact Page Container */
+.contact-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Contact Form and Info Layout */
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.contact-form h2 {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+}
+
+.contact-info p, .contact-info ul {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    padding: 5px 0;
+}
+
+/* Google Map */
+.map-container {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="contact-container">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! Feel free to reach out with any questions or to book an appointment.</p>
+
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form action="#" method="post">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Our Dental Clinic</h2>
+                <p><strong>Address:</strong>1247/Plot No. 39, 15th Phase , LHB Colony, pune </p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> dentalclinic@gmail.com</p>
+                <p><strong>Working Hours:</strong></p>
+                <ul>
+                    <li>Mon - Fri: 9:00 AM - 6:00 PM</li>
+                    <li>Saturday: 10:00 AM - 4:00 PM</li>
+                    <li>Sunday: Closed</li>
+					<li>Location</li>
+					<li><a href="https://www.google.com/maps/dir//759%2F53,+1st+floor,+Fergusson+College+Rd,+Opposite+Chitalebandhu+Garware+bridge+corner,+Deccan+Gymkhana,+Pune,+Maharashtra+411004/@18.5158268,73.7594676,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc2bf881e459a07:0xafc040a99b72f7c5!2m2!1d73.8418693!2d18.5158446?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D>Deccan Dental Clinic, 759/53, 1st floor, Fergusson College Rd, Opposite Chitalebandhu Garware bridge corner, Deccan Gymkhana, Pune, Maharashtra 411004" target="blank">Deccan Dental Clinic, 759/53, 1st floor, Fergusson College Rd, Opposite Chitalebandhu Garware bridge corner, Deccan Gymkhana, Pune, Maharashtra 411004</a></li>
+					
+                </ul>
+
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.querySelector(".contact-form form");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Simple validation check
+        if (!name || !email || !message) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        // Display confirmation popup
+        alert("Your information has been stored successfully! ");
+
+        // Optionally, clear the form after submission
+        contactForm.reset();
+    });
+});
+    </script>
+
+</body>
+</html>

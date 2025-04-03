@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dark Mode with Backend</title>
+    <link rel="stylesheet" href="/darkMode.css">
+</head>
+<body th:class="${darkModeEnabled ? 'dark-mode' : ''}">
+
+    <div class="container">
+        <h1>Enable Dark Mode</h1>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" th:checked="${darkModeEnabled}">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggle = document.getElementById("darkModeToggle");
+
+            // Toggle dark mode and send request to backend
+            toggle.addEventListener("change", function () {
+                fetch("http://localhost:8087/api/toggle-dark-mode", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ darkMode: this.checked })
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.darkMode) {
+                        document.body.classList.add("dark-mode");
+                    } else {
+                        document.body.classList.remove("dark-mode");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
